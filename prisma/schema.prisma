@@ -6,6 +6,7 @@
 
 generator client {
   provider = "prisma-client-js"
+  engineType = "library"
 }
 
 datasource db {
@@ -16,19 +17,19 @@ datasource db {
 
 // creating User Model
 model User {
-  id Int @id @default(autoincrement())
-  email String @unique
-  firstName String?
-  lastName String?
-  password String
+  id        Int     @id @default(autoincrement())
+  email     String  @unique
+  password  String
+  firstName String
+  lastName  String
 }
 
 // creting TODO Model
 model Todo {
-  id Int @id @default(autoincrement())
-  title String
+  id          Int    @id @default(autoincrement())
+  title       String
   description String?
-  done Boolean @default(false)
-  userId Int
+  done        Boolean @default(false)
+  userId      Int
 
 }
